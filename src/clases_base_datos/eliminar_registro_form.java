@@ -53,6 +53,14 @@ public class eliminar_registro_form {
                     {
                         ex.printStackTrace();
                     }
+                    finally {
+                        try {
+                            DriverManager.getConnection(url, user, password).close();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+
+                    }
             }
         });
 

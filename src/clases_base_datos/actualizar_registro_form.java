@@ -75,10 +75,14 @@ public class actualizar_registro_form extends actualizar_registro{
                 {
                     ex.printStackTrace();
                 }
+                finally {
+                    try {
+                        DriverManager.getConnection(url, user, password).close();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
 
-
-
-
+                }
             }
         });
 
